@@ -1,9 +1,0 @@
-## Interface: 120001
-## Title: Decor Link
-## Notes: Allow linking of decor items from the housing catalog
-## Category: Housing
-## Group: Housing
-## Author: Ripster
-## Version: 0.1
-
-DecorLink.lua
