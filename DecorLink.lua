@@ -1,7 +1,7 @@
 local f = CreateFrame("Frame");
 
 EventRegistry:RegisterCallback("HousingCatalogEntry.OnInteract", function(owner, catalogEntry, button, isDrag)
-    if button == "LeftButton" and not isDrag then
+    if button == "LeftButton" then
         if IsControlKeyDown() then
             local catalogEntryInfo = C_HousingCatalog.GetCatalogEntryInfo(catalogEntry.entryInfo.entryID);
             if catalogEntryInfo.itemID ~= nil then
