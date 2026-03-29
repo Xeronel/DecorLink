@@ -1,15 +1,15 @@
-local f = CreateFrame("Frame");
+DecorLinkMixin = {};
 
 EventRegistry:RegisterCallback("HousingCatalogEntry.OnInteract", function(owner, catalogEntry, button, isDrag)
-    if button == "LeftButton" then
-        if IsControlKeyDown() then
-            local catalogEntryInfo = C_HousingCatalog.GetCatalogEntryInfo(catalogEntry.entryInfo.entryID);
-            if catalogEntryInfo.itemID ~= nil then
-                local _, itemLink = GetItemInfo(catalogEntryInfo.itemID);
-                if itemLink ~= nil then
-                    ChatEdit_InsertLink(itemLink);
-                end
-            end
+    local keyDown = DecorLinkSettings.IsKeyDown();
+    local clicked = DecorLinkSettings.Clicked(button);
+    if clicked and keyDown then
+        local catalogEntryInfo = C_HousingCatalog.GetCatalogEntryInfo(catalogEntry.entryInfo.entryID);
+        if catalogEntryInfo ~= nil and catalogEntryInfo.itemID ~= nil then
+            local itemObj = Item:CreateFromItemID(catalogEntryInfo.itemID);
+            itemObj:ContinueOnItemLoad(function()
+                ChatEdit_InsertLink(itemObj:GetItemLink());
+            end)
         end
     end
-end, f);
+end, "DecorLinkMixin");

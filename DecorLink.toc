@@ -5,5 +5,7 @@
 ## Group: Housing
 ## Author: Ripster
 ## Version: 0.1
+## SavedVariables: DecorLink_SavedVars
 
+DecorLinkSettings.lua
 DecorLink.lua
