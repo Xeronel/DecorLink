@@ -34,7 +34,7 @@ EventUtil.ContinueOnAddOnLoaded(addonName, function()
 		--
 		local variable = "mouseButton";
 		local name = "Mouse Button";
-		local defaultValue = "left";
+		local defaultValue = "LeftButton";
 		-- This will read/write the setting directly to DecorLink_SavedVars
 		local setting = Settings.RegisterAddOnSetting(category, addonName.."_"..variable, variable, DecorLink_SavedVars, "string", name, defaultValue);
 
