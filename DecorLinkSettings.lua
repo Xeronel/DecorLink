@@ -16,7 +16,7 @@ EventUtil.ContinueOnAddOnLoaded(addonName, function()
 		--
 		local variable = "modifierKey";
 		local name = "Modifier Key";
-		local defaultValue = "ctrl";
+		local defaultValue = "none";
 		-- This will read/write the setting directly to DecorLink_SavedVars
 		local setting = Settings.RegisterAddOnSetting(category, addonName.."_"..variable, variable, DecorLink_SavedVars, "string", name, defaultValue);
 
@@ -34,7 +34,7 @@ EventUtil.ContinueOnAddOnLoaded(addonName, function()
 		--
 		local variable = "mouseButton";
 		local name = "Mouse Button";
-		local defaultValue = "LeftButton";
+		local defaultValue = "RightButton";
 		-- This will read/write the setting directly to DecorLink_SavedVars
 		local setting = Settings.RegisterAddOnSetting(category, addonName.."_"..variable, variable, DecorLink_SavedVars, "string", name, defaultValue);
 
